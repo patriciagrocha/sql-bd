@@ -42,3 +42,7 @@ SELECT * FROM times;
 SELECT nome FROM times WHERE sigla = 'KSA';
 SELECT sigla FROM times WHERE nome = 'Gana';
 
+SELECT * FROM times WHERE nome like 'E%';
+SELECT * FROM times WHERE LOWER(nome) like 'e%';
+SELECT * FROM times WHERE LOWER(nome) like 'e%' AND sigla like 'U%';
+
