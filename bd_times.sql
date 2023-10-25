@@ -39,3 +39,6 @@ INSERT INTO times (sigla, nome) VALUES ('KOR', 'Coréia do Sul');
 
 SELECT * FROM times;
 
+SELECT nome FROM times WHERE sigla = 'KSA';
+SELECT sigla FROM times WHERE nome = 'Gana';
+
