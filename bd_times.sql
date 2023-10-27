@@ -59,3 +59,6 @@ UPDATE times SET grupo = 'H' WHERE nome IN ('Portugal', 'Gana', 'Uruguai', 'Cor√
 commit;
 
 SELECT * FROM times;
+
+SELECT nome FROM times WHERE grupo = 'G';
+SELECT sigla FROM times WHERE grupo = 'C';
