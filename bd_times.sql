@@ -108,3 +108,14 @@ SELECT sigla_time FROM CAMPEOES WHERE ano = (SELECT MAX(ano) FROM campeoes);
 SELECT DISTINCT(grupo) FROM times ORDER BY grupo;
 
 SELECT grupo, COUNT(*) FROM times GROUP BY grupo;
+
+
+-- Consultar os nomes em maiúsculo dos times que estão disputando a copa atual é que já ganharam 
+-- algum título de campeão da Copa do Mundo, sem repetir o nome do time
+SELECT DISTINCT(UPPER(nome)) FROM times INNER JOIN  campeoes ON times.sigla = campeoes.sigla_time;
+
+-- Consultar os nomes em minúsculo dos times que estão disputando a copa atual e que 
+-- nunca ganharam um título de campeão da Copa do Mundo, sem repetir o nome do time
+SELECT DISTINCT(LOWER(nome)) 
+FROM times LEFT JOIN campeoes ON times.sigla = campeoes.sigla_time
+WHERE campeoes.sigla_time IS NULL;
