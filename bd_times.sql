@@ -100,3 +100,7 @@ INSERT INTO campeoes (ano, sigla_time) VALUES (2022, 'ARG');
 commit;
 
 SELECT * FROM campeoes;
+
+SELECT * FROM campeoes ORDER BY ano;
+
+SELECT sigla_time FROM CAMPEOES WHERE ano = (SELECT MAX(ano) FROM campeoes); 
