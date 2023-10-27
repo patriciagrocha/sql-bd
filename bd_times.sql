@@ -104,3 +104,7 @@ SELECT * FROM campeoes;
 SELECT * FROM campeoes ORDER BY ano;
 
 SELECT sigla_time FROM CAMPEOES WHERE ano = (SELECT MAX(ano) FROM campeoes); 
+
+SELECT DISTINCT(grupo) FROM times ORDER BY grupo;
+
+SELECT grupo, COUNT(*) FROM times GROUP BY grupo;
