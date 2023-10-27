@@ -62,3 +62,10 @@ SELECT * FROM times;
 
 SELECT nome FROM times WHERE grupo = 'G';
 SELECT sigla FROM times WHERE grupo = 'C';
+
+-- Consultar todos os campos dos times do grupo 'E' e do grupo 'H', em ordem alfabética de grupo.
+SELECT * FROM times WHERE grupo = 'E' OR grupo = 'H' ORDER BY grupo;
+SELECT * FROM times WHERE grupo IN ('E', 'H') ORDER BY grupo; -- mesma coisa que o de cima
+-- Consultar todos os campos dos times do grupo 'E' e do grupo 'H', em ordem alfabética de nome do time.
+SELECT * FROM times WHERE grupo = 'E' OR grupo = 'H' ORDER BY nome;
+SELECT * FROM times WHERE grupo IN ('E', 'H') ORDER BY nome; -- mesma coisa que o de cima
