@@ -69,3 +69,34 @@ SELECT * FROM times WHERE grupo IN ('E', 'H') ORDER BY grupo; -- mesma coisa que
 -- Consultar todos os campos dos times do grupo 'E' e do grupo 'H', em ordem alfabética de nome do time.
 SELECT * FROM times WHERE grupo = 'E' OR grupo = 'H' ORDER BY nome;
 SELECT * FROM times WHERE grupo IN ('E', 'H') ORDER BY nome; -- mesma coisa que o de cima
+
+
+CREATE TABLE campeoes (
+	ano int,
+	sigla_time varchar(3),
+primary key (ano),
+foreign key (sigla_time) references times (sigla)
+);
+
+
+INSERT INTO campeoes (ano, sigla_time) VALUES (1930, 'URU');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1950, 'URU');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1954, 'GER');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1958, 'BRA');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1962, 'BRA');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1966, 'ENG');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1970, 'BRA');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1974, 'GER');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1978, 'ARG');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1986, 'ARG');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1990, 'GER');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1994, 'BRA');
+INSERT INTO campeoes (ano, sigla_time) VALUES (1998, 'FRA');
+INSERT INTO campeoes (ano, sigla_time) VALUES (2002, 'BRA');
+INSERT INTO campeoes (ano, sigla_time) VALUES (2010, 'ESP');
+INSERT INTO campeoes (ano, sigla_time) VALUES (2014, 'GER');
+INSERT INTO campeoes (ano, sigla_time) VALUES (2018, 'FRA');
+INSERT INTO campeoes (ano, sigla_time) VALUES (2022, 'ARG');
+commit;
+
+SELECT * FROM campeoes;
